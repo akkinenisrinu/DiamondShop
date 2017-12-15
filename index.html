@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="diamondStore">
+<head >
+    <meta charset="UTF-8">
+    <title>Diamond Shop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link href = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel = "stylesheet">
+</head>
+<body ng-controller="diamondStoreController as Store">
+<div>
+    <div ng-repeat="product in Store.products">
+        <h3> {{product.name}}</h3>
+        <!--<h1>{{product.name}}-->
+        <!--<em class="pull-right"> Salary: {{product.price | currency: '&#8377;'}} L</em>-->
+            <img style=" width: 100px; height: 100px" ng-src="{{product.image[0].path}}"/>
+            <!--<img style="width:100px; height:100px; display:block" src="Images/img.jpg"/>-->
+        </h1>
+        <!--<p>{{product.des}}</p>-->
+        <!--<button ng-show="product.canPurchase"> Add to Cart </button>-->
+        <section>
+            <div>
+                <ul class="nav nav-pills">
+                    <li><a href ng-click="Store.selectTab(1)"> Description</a></li>
+                    <li><a href ng-click="Store.selectTab(2)"> Specification</a></li>
+                    <li><a href ng-click="Store.selectTab(3)"> Reviews </a></li>
+                </ul>
+            </div>
+
+            <!--<product-panel ng-controller="panelController as panels">-->
+            <div>
+                <div class="panel" ng-show="Store.isSelected === 1">
+                    <h4>Description</h4>
+                    <p>{{product.des}}</p>
+                </div>
+                <div class="panel" ng-show="Store.isSelected === 2">
+                    <h4>Salary</h4>
+                    <p>{{product.price}}</p>
+                </div>
+                <div class="panel" ng-show="Store.isSelected === 3">
+                    <h4>Review</h4>
+                    <blockquote ng-repeat="review in product.reviews">
+                        <b>
+                            Stars: {{review.Stars}}
+                        </b>
+                        {{review.body}}
+                        <cite>{{review.author}}</cite>
+                    </blockquote>
+                    <button type="button" class="submit" ng-click="Store.addReview()">Add Review</button>
+
+
+                <div ng-if="Store.showReview">
+                    <div class="reviewForm" >
+                        <form name="reviewForm" novalidate>
+                            <select ng-model="Store.setStar" required>
+                                <option value="" selected>Select star</option>
+                                <option value="1"> 1</option>
+                                <option value="2"> 2</option>
+                                <option value="3"> 3</option>
+                                <option value="4"> 4</option>
+                                <option value="5"> 5</option>
+                            </select>
+                            <textarea ng-model="Store.setDesc" required></textarea>
+                            <label>by: </label>
+                            <input ng-model="Store.setAuthor" type="text" required/>
+                            <div ng-show="!reviewForm.$valid">Please Enter Valid Options in the field</div>
+                            <input type="submit" value="submit" ng-click="reviewForm.$valid && Store.addSubmit(product)"/>
+                        </form>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+
+
+
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript" src="testApp.js"></script>
+</body>
+</html>
