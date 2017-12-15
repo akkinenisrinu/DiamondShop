@@ -10,15 +10,15 @@
 <div>
     <div ng-repeat="product in Store.products">
         <h3> {{product.name}}</h3>
+        <h4 style="float:right">{{product.price | currency}} L</h4>
         <!--<h1>{{product.name}}-->
         <!--<em class="pull-right"> Salary: {{product.price | currency: '&#8377;'}} L</em>-->
             <img style=" width: 100px; height: 100px" ng-src="{{product.image[0].path}}"/>
             <!--<img style="width:100px; height:100px; display:block" src="Images/img.jpg"/>-->
-        </h1>
         <!--<p>{{product.des}}</p>-->
         <!--<button ng-show="product.canPurchase"> Add to Cart </button>-->
-        <section>
-            <div>
+        <section >
+            <div >
                 <ul class="nav nav-pills">
                     <li><a href ng-click="Store.selectTab(1)"> Description</a></li>
                     <li><a href ng-click="Store.selectTab(2)"> Specification</a></li>
@@ -28,15 +28,15 @@
 
             <!--<product-panel ng-controller="panelController as panels">-->
             <div>
-                <div class="panel" ng-show="Store.isSelected === 1">
+                <div class="panel" ng-show="Store.setTab === 1">
                     <h4>Description</h4>
                     <p>{{product.des}}</p>
                 </div>
-                <div class="panel" ng-show="Store.isSelected === 2">
+                <div class="panel" ng-show="Store.setTab === 2">
                     <h4>Salary</h4>
                     <p>{{product.price}}</p>
                 </div>
-                <div class="panel" ng-show="Store.isSelected === 3">
+                <div class="panel" ng-show="Store.setTab === 3">
                     <h4>Review</h4>
                     <blockquote ng-repeat="review in product.reviews">
                         <b>
