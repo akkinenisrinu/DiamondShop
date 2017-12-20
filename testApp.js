@@ -10,6 +10,7 @@
         Store.products = [
             {
                 name: 'Srinu Akkineni',
+                selectedProfile: 1,
                 price: 4.5,
                 des: 'Some gems have hidden qualities beyond their luster, beyond their shine. This is one of those gems',
                 canPurchase: true,
@@ -40,6 +41,7 @@
             {
                 name: 'Ashok Reddy',
                 price: 7.25,
+                selectedProfile: 1,
                 des: 'Some gems have hidden qualities beyond their luster, beyond their shine. This is one of those gems',
                 canPurchase: true,
                 soldOut: false,
@@ -69,6 +71,7 @@
             {
                 name: 'Nalla Babu',
                 price: 6.85,
+                selectedProfile: 1,
                 des: 'Some gems have hidden qualities beyond their luster, beyond their shine. This is one of those gems',
                 canPurchase: true,
                 soldOut: false,
@@ -97,8 +100,9 @@
             }
         ];
 
-        Store.selectTab = function (param) {
-            Store.setTab = param;
+        Store.selectTab = function (product, param) {
+            product.selectedProfile = param;
+
         }
 
 

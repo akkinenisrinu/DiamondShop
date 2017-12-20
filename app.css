@@ -1,0 +1,36 @@
+.reviewForm{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /*border-style: solid;*/
+    /*border-width: thin;*/
+    display: inline-block;
+}
+
+.reviewForm input{
+    margin-right: 10px;
+}
+
+.reviewForm select{
+    text-align-last: center;
+}
+
+.optionLt{
+    text-align-last: center;
+    width: 10px;
+}
+
+.textEntered{
+    margin-left: 20px;
+}
+
+.ImageStyle{
+    width: 120px;
+    height: 120px
+}
+
+.mainContainer{
+    font-size: 20px;
+    border: 2px;
+    solid-color: black;
+    display: inline;
+}
