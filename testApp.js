@@ -41,7 +41,7 @@
             {
                 name: 'Ashok Reddy',
                 price: 7.25,
-                selectedProfile: 1,
+                selectedProfile: 2,
                 des: 'Some gems have hidden qualities beyond their luster, beyond their shine. This is one of those gems',
                 canPurchase: true,
                 soldOut: false,
@@ -71,7 +71,7 @@
             {
                 name: 'Nalla Babu',
                 price: 6.85,
-                selectedProfile: 1,
+                selectedProfile: 3,
                 des: 'Some gems have hidden qualities beyond their luster, beyond their shine. This is one of those gems',
                 canPurchase: true,
                 soldOut: false,
@@ -103,12 +103,12 @@
         Store.selectTab = function (product, param) {
             product.selectedProfile = param;
 
-        }
+        };
 
 
         Store.addReview = function () {
             Store.showReview = true;
-        }
+        };
 
 
         Store.addSubmit = function (obj) {
@@ -119,6 +119,7 @@
                 author: Store.setAuthor
             };
 
+            console.log(obj.reviews);
             obj.reviews.push(params);
 
             Store.setStar = "";

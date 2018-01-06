@@ -1,20 +1,10 @@
-<div>
-    <div class="panel" ng-show="panels.isSelected(1)">
+<div ng-controller="diamondStoreController">
+    <div class="panel" ng-show="product.selectedProfile === 1">
         <h4>Description</h4>
         <p>{{product.des}}</p>
     </div>
-    <div class="panel" ng-show="panels.isSelected(2)">
+    <div class="panel" ng-show="product.selectedProfile === 2">
         <h4>Salary</h4>
         <p>{{product.price}}</p>
-    </div>
-    <div class="panel" ng-show="panels.isSelected(3)">
-        <h4>Review</h4>
-        <blockquote ng-repeat="review in product.reviews">
-            <b>
-                Stars: {{review.Stars}}
-            </b>
-            {{review.body}}
-            <cite>{{review.author}}</cite>
-        </blockquote>
     </div>
 </div>
